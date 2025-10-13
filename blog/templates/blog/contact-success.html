@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block title %} 
+Message Sent!
+{% endblock %} 
+
+{% block content %}
+<section id="success-message">
+    <h2>Thank You! 👋</h2>
+    <p>Your message has been successfully sent to the blog author.</p>
+    <p>We appreciate you taking the time to reach out. We'll get back to you as soon as possible.</p>
+    
+    <p><a href="{% url "starting-page" %}">Go back to the homepage</a></p>
+</section>
+
+<style>
+    #success-message {
+        max-width: 600px;
+        margin: 4rem auto;
+        padding: 3rem;
+        text-align: center;
+        background-color: #e6ffed; /* Light green background */
+        border: 1px solid #c8e6c9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #success-message h2 {
+        color: #387034; /* Dark green text */
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+</style>
+
+{% endblock %}

@@ -18,5 +18,7 @@ urlpatterns = [
     path("posts/", views.AllPostsView.as_view(), name="posts-page"),
     path("posts/<slug:slug>", views.SinglePostView.as_view(),
          name="post-detail-page"),  # /posts/my-first-post
-    path("read-later", views.ReadLaterView.as_view(), name="read-later")
+    path("read-later", views.ReadLaterView.as_view(), name="read-later"),
+     path("contact/", views.ContactView.as_view(), name="contact-page"),
+     path("contact/success/", views.ContactSuccessView.as_view(), name="contact-success"), 
 ]

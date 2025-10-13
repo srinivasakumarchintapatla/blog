@@ -123,3 +123,21 @@ class Comment(models.Model):
     text = models.TextField(max_length=400)
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments")
+    
+
+class Contact(models.Model):
+    # 🌟 CORRECTED MODEL DESIGN FOR SITE-WIDE CONTACT FORM
+    user_name = models.CharField(max_length=120)
+    user_email = models.EmailField()
+    
+    # 🌟 Added dedicated MESSAGE field (replaces the old 'text' field)
+    message = models.TextField() 
+    
+    # 🌟 Added optional phone number (aligns with ContactForm expectation)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+
+    # ❌ REMOVED: post = models.ForeignKey(...) 
+    # A site contact form should not be tied to a specific post.
+
+    def __str__(self):
+        return f"Contact from {self.user_name} <{self.user_email}>"

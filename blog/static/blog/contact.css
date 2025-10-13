@@ -1,0 +1,105 @@
+/* Style for the main contact section */
+#contact {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+#contact p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Styling for individual form controls */
+.form-control {
+    margin-bottom: 1.5rem;
+}
+
+/* Styling for labels */
+.form-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Styling for text inputs and textareas */
+.form-control input[type="text"],
+.form-control input[type="email"],
+.form-control input[type="number"],
+.form-control textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't expand the element width */
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-control textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px;
+}
+
+/* Styling for invalid fields and error messages */
+.form-control.invalid input,
+.form-control.invalid textarea {
+    border-color: #dc3545; /* Red border for errors */
+    background-color: #fff0f3;
+}
+
+.form-control ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    color: #dc3545;
+    font-size: 0.875rem;
+}
+
+/* Styling for the submit button */
+#contact button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the alert box (form submission failure) */
+#alert {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    text-align: center;
+}

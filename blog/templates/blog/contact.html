@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block title %} 
+Contact Us
+{% endblock %} 
+
+{% block css_files %} 
+<link rel="stylesheet" href="{% static "blog/contact.css" %}" />
+{% endblock %} 
+
+{% block content %}
+<section id="contact">
+    <h2>Get in Touch</h2>
+    <p>We'd love to hear from you! Please fill out the form below.</p>
+
+    {% if contact_form.non_field_errors %}
+      <div id="alert">
+        <h2>Submission failed!</h2>
+        <p>Please check the form below and fix any errors.</p>
+      </div>
+    {% endif %}
+
+    <form action="{% url "contact-page" %}" method="POST">
+        {% csrf_token %}
+
+        {% for form_field in contact_form %}
+            <div class="form-control {% if form_field.errors %}invalid{% endif %}">
+                
+                {{ form_field.label_tag }}
+                {{ form_field }}
+                
+                {{ form_field.errors }}
+            </div>
+        {% endfor %}
+
+        <button>Send Message</button>
+    </form>
+</section>
+{% endblock %}
